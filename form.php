@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "INSERT INTO tasks (task_name, task_description, task_due_date, task_status) VALUES ('$task_name', '$task_description', '$task_due_date', '$task_status')";
     if (mysqli_query($conn, $sql)) {
-        echo "Added new task";
+        echo "Task added";
     } else {
         echo "Error: Failed " . $sql . "<br>" . mysqli_error($conn);
     }

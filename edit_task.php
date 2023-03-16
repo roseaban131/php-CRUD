@@ -10,12 +10,12 @@ if (isset($_GET["id"])) {
     $row = mysqli_fetch_assoc($result);
 
     if (!$row) {
-        echo "Error: Task not found.";
+        echo "Error: No task found.";
         exit;
     }
 } else {
    
-    echo "Error: No task ID specified.";
+    echo "No task selected.";
     exit;
 }
 
@@ -27,9 +27,9 @@ if (isset($_POST["submit"])) {
 
     $sql = "UPDATE tasks SET task_name = '$name', task_description = '$description', task_due_date = '$due_date', task_status = '$status' WHERE id = $id";
     if (mysqli_query($conn, $sql)) {
-        echo "Task updated successfully.";
+        echo "Task edited complete.";
     } else {
-        echo "Error updating task: " . mysqli_error($conn);
+        echo "Error editing task: " . mysqli_error($conn);
     }
 }
 
